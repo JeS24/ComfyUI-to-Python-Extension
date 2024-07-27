@@ -556,13 +556,17 @@ if __name__ == "__main__":
     import argparse
 
     args = argparse.ArgumentParser()
-    args.add_argument("--input_file", type=str, default="default_workflow_api.json")
-    args.add_argument("--output_file", type=str, default="default_workflow_api.py")
-    args.add_argument("--queue_size", type=int, default=10)
+    args.add_argument(
+        "-i", "--input_file", type=str, default="default_workflow_api.json"
+    )
+    args.add_argument(
+        "-o", "--output_file", type=str, default="default_workflow_api.py"
+    )
+    args.add_argument("-qs", "--queue_size", type=int, default=10)
     args = args.parse_args()
 
     # Update class parameters here
-    input_file = "./workflows/" + args.input_file
+    input_file = args.input_file
     output_file = args.output_file
     queue_size = args.queue_size
 
